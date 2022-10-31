@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Pokedex</title>
+    </head>
+    <body>
+        <form method="POST">
+            <div class="input">
+            <input type="text" placeholder="Type the serial number" name="sno">
+            <button type="submit" name="Find">Find</button>
+        </div>
+    </form>
+            <div class = "datas">
+            {% if data.id and data.name and data.type1 and data.type2 and data.ability1 and data.ability2 and data.Hiddenability and data.HP and data.Attack and data.Defense and data.SpecialAttack and data.SpecialDefense and data.Speed and data.TotalStats and data.EvolutionMethod and data.EvolutionName %}
+        <h4>Id : {{data.id}} 
+        Name : {{data.name}}</h4>
+        <br/>
+        <h3>Types</h3>
+        <table border="1px">
+        <tr><th>Type1</th><th>Type2</th></tr>
+        <tr><td>{{data.type1}}</td><td>{{data.type2}}</td></tr>
+        </table>
+        <br/>  
+        <h3>Abilities</h3>
+        <table border="1px">
+        <tr><th>Ability1</th><th>Ability2</th><th>Hiddenability</th></tr>
+        <tr><td>{{data.ability1}}</td><td>{{data.ability2}}</td><td>{{data.Hiddenability}}</td></tr>
+        </table> 
+        <br/>
+        <table border="1px">
+        <tr><th>HP</th><th>ATK</th><th>DEF</th><th>SPATK</th><th>SPDEF</th><th>SPD </th><th>TOTAL</th></tr>
+        <tr><td>{{data.HP}}</td><td>{{data.Attack}}</td><td>{{data.Defense}}</td><td>{{data.SpecialAttack}}</td><td>{{data.SpecialDefense}}</td><td>{{data.Speed}}</td><td>{{data.TotalStats}}</td></tr>    
+        </table>
+        <br/>
+           <h4> EvolutionMethod : {{data.EvolutionMethod}}</h4> 
+            <h4> EvolutionName : {{data.EvolutionName}}</h4>
+            {% endif %}
+            </div>
+        
+    </body>
+</html>
+<html>
+    <head>
+        <title>Main</title>
+    </head>
+    <body>
+        <h1>Before entering into pokedex read this </h1>
+        <p>
+            <table border="1px">
+            <tr><th>sno</th><th>pokemon</th></tr>
+            <tr><td>1  </td><td>Diglet</td></tr>
+            <tr><td>2  </td><td>Haunter</td></tr>
+            <tr><td>3  </td><td>Lucario</td></tr>
+            <tr><td>4  </td><td>Alcremie</td></tr>
+            <tr><td>5  </td><td>Charmander</td></tr>
+            
+            </table>
+        </p>
+        <a href="{{url_for('pokedex')}}">Pokedex</a>
+    </body>
+</html>
